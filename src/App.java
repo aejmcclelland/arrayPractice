@@ -1,4 +1,6 @@
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class App {
     public static void main(String[] args) throws Exception {
@@ -22,6 +24,16 @@ public class App {
             }
         }
         System.out.println(Arrays.toString(arr));
+    }
+
+    public static List<String> onlyBeginsWithC(String[] arr) {
+        List<String> wordsStartingWithC = new ArrayList<>();
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i].length() > 0 && arr[i].charAt(0) == 'C') {
+                wordsStartingWithC.add(arr[i]);
+            }
+        }
+        return wordsStartingWithC;
     }
 
     public static void printArrayChangeCase(String[] arr) {
