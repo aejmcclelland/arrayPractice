@@ -11,6 +11,7 @@ public class App {
         printArrayChangeCase(donuts);
         System.out.println();
         capitaliseFirstLetter(donuts);
+        onlyBeginsWithC(donuts);
     }
 
     public static void printArray(String[] arr) {
@@ -33,6 +34,7 @@ public class App {
                 wordsStartingWithC.add(arr[i]);
             }
         }
+        System.out.println("Donut types beginning with the letter C: " + wordsStartingWithC);
         return wordsStartingWithC;
     }
 
