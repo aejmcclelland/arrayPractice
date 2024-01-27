@@ -5,13 +5,20 @@ import java.util.List;
 public class App {
     public static void main(String[] args) throws Exception {
 
-        String[] donuts = { "toffee", "Caramel", "Chocolate", "Jam", "sprinkles" };
+        String[] donuts = { "toffee", "Caramel donut", "Chocolate", "Jam", "sprinkles" };
         printArray(donuts);
         reverseArray(donuts);
         printArrayChangeCase(donuts);
         System.out.println();
         capitaliseFirstLetter(donuts);
-        onlyBeginsWithC(donuts);
+        wordStartsWith(donuts);
+
+        List<String> modifiedDonuts = addWord(donuts);
+
+        for (String donut : modifiedDonuts) {
+            System.out.println(donut);
+        }
+
     }
 
     public static void printArray(String[] arr) {
@@ -25,17 +32,6 @@ public class App {
             }
         }
         System.out.println(Arrays.toString(arr));
-    }
-
-    public static List<String> onlyBeginsWithC(String[] arr) {
-        List<String> wordsStartingWithC = new ArrayList<>();
-        for (int i = 0; i < arr.length; i++) {
-            if (arr[i].length() > 0 && arr[i].charAt(0) == 'C') {
-                wordsStartingWithC.add(arr[i]);
-            }
-        }
-        System.out.println("Donut types beginning with the letter C: " + wordsStartingWithC);
-        return wordsStartingWithC;
     }
 
     public static void printArrayChangeCase(String[] arr) {
@@ -60,4 +56,30 @@ public class App {
         System.out.println();
         System.out.println(Arrays.toString(arr));
     }
+
+    public static List<String> wordStartsWith(String[] arr) {
+        List<String> firstLetter = new ArrayList<>();
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i].length() > 0 && arr[i].charAt(i) == 'C') {
+                firstLetter.add(arr[i]);
+            }
+        }
+        System.out.println("Donuts starting with the letter - " + firstLetter);
+        return firstLetter;
+    }
+
+    public static List<String> addWord(String[] arr) {
+        List<String> addDonut = new ArrayList<>();
+        for (int i = 0; i < arr.length; i++) {
+            String currentDonut = arr[i];
+
+            if (currentDonut.length() > 0 && !currentDonut.endsWith("donut")) {
+                currentDonut += " donut";
+            }
+
+            addDonut.add(currentDonut);
+        }
+        return addDonut;
+    }
+
 }
